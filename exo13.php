@@ -140,7 +140,7 @@ class Voiture{
     if ($this->getStatut() === 1) {
       echo "Le véhicule " . $this->getMarque() . " est déjà à l'arrêt.<br>";
     } else {
-    $this->vitesse = 0;
+    $this->_statut = 0;
     echo "Le véhicule " . $this->getMarque() . " est stoppé.<br>";
     $this->status = 0;
   }
