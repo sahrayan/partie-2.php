@@ -18,58 +18,59 @@ class Voiture{
 
     public function getMarque():string{
         return $this->_marque;
-    }
-    public function setMarque(string $marque){
-        $this->_marque = $marque;
-    }
-
-
-    public function getModele():string{
-        return $this->_modele;
-    }
-    public function setModele(string $modele){
-        $this->_modele = $modele;
-    }
-
-
+        }
+        public function setMarque(string $marque){
+            $this->_marque = $marque ;
+            return $this;
+        }
     
-    public function getNbporte():int{
-        return $this->_nbporte;
-    }
-    public function setNbporte(int $nbporte){
-        $this->_nbporte = $nbporte;
-    }
-
-
-
-    public function getVitesseAcctuelle():float{
-        return $this->_vitesseAcctuelle;
-    }
-
-    public function setVitesseAcctuelle(float $vitesse){
-        $this->_vitesseAcctuelle = $vitesse;
-        return $this->_vitesseAcctuelle;
-    }
-
-
-
-
-    public function getStatut(){
-        return $this->_statut;
-    }
-    public function setStatut($avance)
-    {
-        $this->_statut = $avance;
-        return $this->_statut;
-    }
-
-
-
-    public function __toString()
-    {
-        return $this->_marque." ".$this->_modele ;
-    }
-
+    
+    
+    
+        public function getModele():string{
+            return $this->_modele;
+        }
+        public function setModele(string $modele){
+            $this->_modèle = $modele ;
+            return $this;
+        }
+    
+    
+    
+    
+        public function getPorte():int{
+            return $this->_nBPortes;
+        }
+        public function setPorte(int $porte){
+            $this->_nBPortes = $porte ;
+            return $this->_nBPortes;
+        }
+        
+        
+        
+        public function getVitesse():float{
+            return $this->_vitesseActuelle;
+        }
+        
+        public function setVitesse(float $vitesse){
+            $this->_vitesseActuelle = $vitesse ;
+            return $this->_vitesseActuelle;
+        }
+        
+    
+        public function __toString()
+        {
+            return $this->_marque." ".$this->_modele ;
+        }
+    
+        public function getStatut(){
+            return $this->_statut;
+        }
+        public function setStatut($avance)
+        {
+            $this->_statut = $avance;
+            return $this->_statut;
+        }
 
     public function verifieStatut(){
         if($this->getStatut() == 0){
@@ -99,31 +100,23 @@ class Voiture{
 
     public function Faster($vitesse){
         if($this->getStatut() == 1){
-            $this ->setVitesseAcctuelle($this ->getVitesseAcctuelle()+$vitesse);
+            $this->setVitesse($this->getVitesse()+$vitesse);
             echo "La voiture accelere de " .$vitesse. " km/h<br>";
         }
+        
     }
 
 
-
-    public function Slower($vitesse){
+    public function Ralentir($vitesse){
         if($this->getVitesseAcctuelle() > 0){
-            $this ->_vitesseActuelle -= $vitesse;
+            $this ->setVitesseAcctuelle($this ->getVitesseAcctuelle()-$vitesse);
             echo "La voiture ralentit de " .$vitesse. " km/h<br>";
         }else{
             echo "La voiture est a l arret et ne pas ralentir<br>";
         }
+
     }
-
-
-
-    public function verifieVitesse(){
-        echo "Le vehicule va a " .$this-> _vitesseActuelle  . " km/h <br>";
-        
-    }
-
-   
-
+    
 
     public function Arret(){
 
@@ -135,7 +128,7 @@ class Voiture{
         }
     }
 
-    public function verifieSpeed($vitesse){
+    public function verifieVitesse(){
         echo "Le vehicule va a " .$this-> getVitesseAcctuelle()  . " km/h <br>";
         
     }
@@ -167,6 +160,6 @@ class Voiture{
 
 
 
-    
+
 }
 ?>
