@@ -27,5 +27,6 @@ echo $voiture1 = new Voiture("Peugeot","205",5);
   echo $voiture2 ->Arret();
   
   echo $voiture2 ->verifieStatut();
-  echo $voiture2 ->Accelerer(20);
+   echo $voiture2 ->Accelerer(20);
+echo $voiture2 -> Arret();
   ?>
